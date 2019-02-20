@@ -1,0 +1,51 @@
+{
+  "name": "testcafe-seed",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:chrome": "testcafe chrome src/**/*.spec.js",
+    "test:safari": "testcafe safari ",
+    "test": "testcafe chrome:headless -S -s screenshots src/**/*.spec.js -r spec,xunit:report.xml",
+    "lint": "eslint --fix --ext js src",
+    "clean": "rimraf screenshots report.xml"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sylhero/testcafe-seed.git"
+  },
+  "author": "Yulong Song",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sylhero/testcafe-seed/issues"
+  },
+  "engines": {
+    "node": ">=8.10.0",
+    "npm": ">=5.6.0"
+  },
+  "config": {
+    "pre-git": {
+      "enabled": true,
+      "pre-commit": [
+        "./node_modules/.bin/eslint --fix --ext js src"
+      ]
+    }
+  },
+  "homepage": "https://github.com/sylhero/testcafe-seed#readme",
+  "devDependencies": {
+    "@babel/core": "7.3.3",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "10.0.1",
+    "chalk": "2.4.2",
+    "eslint": "^5.14.1",
+    "eslint-plugin-testcafe": "0.2.1",
+    "pre-git": "3.17.1",
+    "rimraf": "2.6.3"
+  },
+  "dependencies": {
+    "testcafe": "1.0.1"
+  },
+  "release": {
+    "analyzeCommits": "simple-commit-message"
+  }
+}
