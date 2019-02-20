@@ -5,7 +5,8 @@
 
 {
   "extends": [
-    "plugin:testcafe/recommended"
+    "plugin:testcafe/recommended",
+    "eslint:recommended"
   ],
   "env": {
     "browser": true,
