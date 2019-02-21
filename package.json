@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:chrome": "testcafe chrome src/**/*.spec.js",
-    "test:safari": "testcafe safari ",
-    "test": "testcafe chrome:headless -S -s screenshots src/**/*.spec.js -r spec,xunit:report.xml",
+    "test:chrome": "testcafe chrome -S -s screenshots src/**/*.spec.js -r json:report.json,xunit:report.xml",
+    "test:safari": "testcafe safari -S -s screenshots src/**/*.spec.js -r json:report.json,xunit:report.xml",
+    "test": "testcafe chrome:headless -S -s screenshots src/**/*.spec.js -r json:report.json,xunit:report.xml",
     "lint": "eslint --fix --ext js src",
-    "clean": "rimraf screenshots report.xml"
+    "clean": "rimraf screenshots report.xml report.json"
   },
   "repository": {
     "type": "git",

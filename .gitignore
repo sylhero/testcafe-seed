@@ -23,7 +23,7 @@ typings
 # Ignore Test reporters
 ###################
 **/test/coverage
-report.xml
+report*
 coverage
 
 

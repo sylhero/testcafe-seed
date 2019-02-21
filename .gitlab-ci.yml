@@ -1,0 +1,28 @@
+image: docker:stable
+
+services:
+- docker:dind
+
+stages:
+- run-pipeline
+
+test-portal:
+  stage: run-pipeline
+  image: circleci/node:10.14-browsers
+  before_script:
+    - npm install
+    - export username=
+    - export password=
+    - export baseUrl=
+    - export env=
+  script:
+    - npm test
+  only:
+    - master
+  artifacts:
+    when: always
+    paths:
+    - /e2e/report.xml
+    - /e2e/report.json
+    - /e2e/screenshots
+    expire_in: 1 week

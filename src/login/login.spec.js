@@ -1,8 +1,6 @@
 import { Selector } from 'testcafe';
 import helper from '../common/helper';
 
-const test = 'a';
-
 fixture `Login`
     .page `${helper.baseUrl}`;
 
